@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='estilos.css') }}">
+
+    <title>ACTUALIZAR</title>
+</head>
+<body>
+<div class="formulario">
+    <form method="post" action="/actualizar_cliente">
+    <input type="hidden"name="txtid" value="{{dato[0]}}">
+    <label for="NOMBRE">NOMBRE</label>
+    <input type="text" id="nombre" name="txtnombre" value="{{dato[1]}}">
+    <label for="NIT">NIT</label>
+    <input type="text" id="nit" name="txtnit" value="{{dato[2]}}">
+    <input type="submit" value="ACTUALIZAR">
+<div>
+
+</body>
+</html>

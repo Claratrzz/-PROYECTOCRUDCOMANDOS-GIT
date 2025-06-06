@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/stilo.css">
+    <title>VER DETALLES DE COMPRAS</title>
+</head>
+<body>
+    <a href="/">REGRESAR</a>
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>PRODUCTO</th>
+                <th>CANTIDAD</th>
+                <th>COSTO</th>
+                <th>TOTAL</th>
+            </tr>
+            {% for dato in datos %}
+            <tr>
+                <td>{{ dato[0] }}</td>
+                <td>{{ dato[1] }}</td>
+                <td>{{ dato[2] }}</td>
+                <td>{{ dato[3] }}</td>
+                <td>{{dato[3]*dato[2]}}</td>
+            </tr>
+            {% endfor %}
+
+    </table>
+</body>
+</html>
