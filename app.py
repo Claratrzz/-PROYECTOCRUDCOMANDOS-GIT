@@ -80,12 +80,12 @@ def insertarcompra():
     print(f"ID recibido: {id}, Producto: {producto}, Cantidad: {cantidad}, Costo: {costo}")
 
     cursor=conexion.cursor()
-    sql="INSERT INTO dbcompra(producto,cantidad,costo,iddbcliente) values(%s, %s,%s, %s)"
+    sql="INSERT INTO tbcompra(producto,cantidad,costo,tbcliente_id_cliente) values(%s, %s,%s, %s)"
     cursor.execute(sql,(producto,cantidad,costo,id))
     conexion.commit()
     cursor.close
     mostrar=mostrarTodo()
-    return render_template('formulario.html',mostrar=mostrar)
+    return render_template('registrar.html',mostrar=mostrar)
 
 
 def mostrarCliente(id):
@@ -137,7 +137,7 @@ def buscar():
 @app.route('/vercompras/<id>', methods=['get'])
 def vercompras(id):
     cursor=conexion.cursor()
-    sql="select * from dbcompra where iddbcliente=%s"
+    sql="select * from tbcompra where id_compra=%s"
     cursor.execute(sql,(id,))
     datos=cursor.fetchall()
     return render_template('vercompras.html',datos=datos)
@@ -202,3 +202,8 @@ def generar_pdf(id):
 if __name__ == '__main__':
 
     app.run(debug=True)
+
+
+
+
+   
